@@ -8,7 +8,7 @@
   // iterator when the user does not pass one in, this will be handy.
   _.identity = function(val) {
     /* START SOLUTION */
-
+      return val ;
     /* END SOLUTION */
   };
 
@@ -27,7 +27,27 @@
   // return just the first element.
   _.first = function(array, n) {
     /* START SOLUTION */
+     if (n == undefined) {
+      return array[0];
+    }
+    if (n > array.length){
+      return array;
+    }
+    for(var i=0; i<= array.length-1; i++){
+      if (i === n ){
+      return array.slice(0, n);
+      }
+    }
 
+    if (typeof array == 'object') {
+      return [];
+    }
+
+    if (typeof n != 'number') {
+      return [];
+    }
+
+   
     /* END SOLUTION */
   };
 
@@ -35,7 +55,19 @@
   // last element.
   _.last = function(array, n) {
     /* START SOLUTION */
+    array = array.slice();
+     if (n == undefined) {
+      var arr = array.pop();
+      return arr;
+    }
 
+    if (n > array.length){
+      return array;
+    }
+
+    for(var i=array.length-1; i>= n; i--){ 
+      return array.slice( array.length-n, array.length);
+    } 
     /* END SOLUTION */
   };
 
@@ -46,7 +78,8 @@
   // iterator function over each item in the input collection.
   _.each = function(collection, iterator) {
     /* START SOLUTION */
-
+ 
+    
     /* END SOLUTION */
   };
 
